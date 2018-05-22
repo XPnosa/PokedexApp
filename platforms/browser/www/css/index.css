@@ -1,0 +1,245 @@
+/* DEFAULT */
+html {
+	height: 100%;
+	background: linear-gradient(135deg, red 50%, white 50%);
+}
+body {
+	margin: 0;
+	height: 100%;
+}
+fieldset {
+	margin: 0% 1%;
+	color: whitesmoke;
+	background-color: #111;
+	border-radius: 10px;
+	position: relative;
+	top: 1%;
+}
+legend {
+	font-size: 20px;
+}
+table {
+	width: 100%;
+	margin-top: 10px;
+}
+td {
+	width: 50%;
+}
+.active, .inactive {
+	display: inline-block;
+	font-weight: bold;
+	background-color: #222;
+	border-left: 1px solid gray;
+	border-right: 1px solid gray;
+	border-top: 1px solid gray;
+	padding: 10px 5px;
+	border-radius: 5px 5px 0px 0px;
+	cursor: pointer;
+}
+.inactive {
+	transform: scaleY(0.5);
+	width: 12px;
+	text-align: center;
+	position: relative;
+	top: -10px;
+	color: silver;
+	background-color: silver;
+	border-bottom: 3px solid gray;
+}
+.active > div {
+	transform: scale(0.75);
+	width: 90px;
+	text-align: center;
+}
+.inactive > div {
+	color: whitesmoke;
+	transform: scaleX(0.75) scaleY(1.25);
+}
+
+/* POKEMON */
+.pkmn {
+	height: 30px;
+	border: 1px solid gray;
+	border-radius: 5px;
+	padding: 5px;
+	position: relative;
+	background-color: #222;
+}
+.pkmn:hover {
+	background-color: #333;
+}
+.pk_name {
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	margin-left: 5px;
+	border: 0;
+	font-size: 1em;
+	color: whitesmoke;
+	background: transparent;
+}
+.pk_img {
+	float: left;
+}
+.pk_img, .pk_name {
+	cursor: pointer;
+	height: 30px;
+	display: inline-block;
+}
+
+/* TYPE BUTTONS */
+.pk_types {
+	float: right;
+	cursor: default;
+	height: 30px;
+	position: relative;
+	display: inline-block;
+}
+.pk_types_info {
+	cursor: default;
+	height: 30px;
+	position: relative;
+	display: inline-block;
+}
+.pk_type {
+	cursor: pointer;
+	height: 20px;
+	width: 80px;
+	margin: 4px 5px 4px 0px;
+	font-weight: bold;
+	display: inline-block;
+	border: 1px solid #aaa;
+	border-radius: 2px;
+	color: white;
+	font-size: 10px;
+	text-align: center;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 1px black;
+}
+.pk_type > span {
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+.title {
+	margin-top: 5px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+/* OTHERS */
+#list {
+	overflow-y: auto;
+	position: relative;
+	top: -15px;
+	margin: 2px;
+}
+#loading {
+	filter: invert(100%);
+}
+#loading-mini {
+	position: absolute;
+	top: 1%;
+	right: 1%;
+	height: 1em;
+}
+#gallery, #details {
+	background: linear-gradient(red, black, white);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+#photo {
+	height: 200px;
+}
+#photo, #photo-full {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#info {
+	margin: 0 10px;
+	padding: 10px;
+	background: #CCC;
+	opacity: 0.75;
+	border: 5px outset #333;
+	border-radius: 10px;
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	width: 75%;
+	max-height: 75%;
+	overflow-y: auto;
+}
+
+/* TYPES */
+.Normal{background:#8a8a59;background-image:-webkit-linear-gradient(#a8a878,#8a8a59);background-image:linear-gradient(#a8a878,#8a8a59);border-color:#79794e}
+.Fuego{background:#f08030;background-image:-webkit-linear-gradient(#f08030,#dd6610);background-image:linear-gradient(#f08030,#dd6610);border-color:#b4530d}
+.Agua{background:#6890f0;background-image:-webkit-linear-gradient(#6890f0,#386ceb);background-image:linear-gradient(#6890f0,#386ceb);border-color:#1753e3}
+.Eléctrico{background:#f8d030;background-image:-webkit-linear-gradient(#f8d030,#f0c108);background-image:linear-gradient(#f8d030,#f0c108);border-color:#c19b07}
+.Planta{background:#78c850;background-image:-webkit-linear-gradient(#78c850,#5ca935);background-image:linear-gradient(#78c850,#5ca935);border-color:#4a892b}
+.Hielo{background:#98d8d8;background-image:-webkit-linear-gradient(#98d8d8,#69c6c6);background-image:linear-gradient(#98d8d8,#69c6c6);border-color:#45b6b6}
+.Lucha{background:#c03028;background-image:-webkit-linear-gradient(#c03028,#9d2721);background-image:linear-gradient(#c03028,#9d2721);border-color:#82211b}
+.Veneno{background:#a040a0;background-image:-webkit-linear-gradient(#a040a0,#803380);background-image:linear-gradient(#a040a0,#803380);border-color:#662966}
+.Tierra{background:#e0c068;background-image:-webkit-linear-gradient(#e0c068,#d4a82f);background-image:linear-gradient(#e0c068,#d4a82f);border-color:#aa8623}
+.Volador{background:#a890f0;background-image:-webkit-linear-gradient(#a890f0,#9180c4);background-image:linear-gradient(#a890f0,#9180c4);border-color:#7762b6}
+.Psíquico{background:#f85888;background-image:-webkit-linear-gradient(#f85888,#f61c5d);background-image:linear-gradient(#f85888,#f61c5d);border-color:#ba083d}
+.Bicho{background:#a8b820;background-image:-webkit-linear-gradient(#a8b820,#8d9a1b);background-image:linear-gradient(#a8b820,#8d9a1b);border-color:#616b13}
+.Roca{background:#b8a038;background-image:-webkit-linear-gradient(#b8a038,#93802d);background-image:linear-gradient(#b8a038,#93802d);border-color:#746523}
+.Fantasma{background:#705898;background-image:-webkit-linear-gradient(#705898,#554374);background-image:linear-gradient(#705898,#554374);border-color:#413359}
+.Dragón{background:#7038f8;background-image:-webkit-linear-gradient(#7038f8,#4c08ef);background-image:linear-gradient(#7038f8,#4c08ef);border-color:#3d07c0}
+.Acero{background:#b8b8d0;background-image:-webkit-linear-gradient(#b8b8d0,#9797ba);background-image:linear-gradient(#b8b8d0,#9797ba);border-color:#7a7aa7}
+.Siniestro{background:#705848;background-image:-webkit-linear-gradient(#705848,#513f34);background-image:linear-gradient(#705848,#513f34);border-color:#362a23}
+.Hada{background:#e898e8;background-image:-webkit-linear-gradient(#e898e8,#de6ede);background-image:linear-gradient(#e898e8,#de6ede);border-color:#d547d5}
+
+/* RESPONSIVE */
+@media (max-width: 400px) {
+	.pk_types {
+		display: none;
+	}
+}
+
+/* TABLET */
+@media (min-width:640px)  { 
+	.pkmn {
+		height: 60px;
+	}
+	.pk_name {
+		font-size: 1.5em;
+	}
+	.pk_img {
+		float: left;
+	}
+	.pk_img, .pk_name {
+		height: 60px;
+	}
+	.pk_types {
+		height: 60px;
+	}
+	.pk_types_info {
+		height: 60px;
+	}
+	.pk_type {
+		height: 50px;
+		width: 160px;
+		margin: 3px 5px 3px 0px;
+		border: 2px solid #444;
+		border-radius: 4px;
+		font-size: initial;
+		text-shadow: 2px 2px 2px black;
+	}
+	.title {
+		margin-top: 0.25em;
+		margin-bottom: 0.5em;
+		font-size: 1.25em;
+	}
+	#info {
+		font-size: 1.75em;
+	}
+	table {
+		margin-top: 1em;
+	}
+}
