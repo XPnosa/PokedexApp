@@ -269,17 +269,17 @@ function dontBack(){
 	window.location.hash="Again-No-back-button"
 	window.onhashchange=function(){
 		window.location.hash="no-back-button";
-		if (load_completed)
+		if (load_completed) 
 			showDex(generation);
 	}
 }
 
 function onBackKeyDown(e) {
 	e.preventDefault();
-	showDex(generation);
+	if (load_completed) 
+		showDex(generation);
 }
 
 $(window).bind('resize',function(e) { fitDex(); });
 
 $(window).bind('orientationchange',function(e) { fitDex(); });
-
