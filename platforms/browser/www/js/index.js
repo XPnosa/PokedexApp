@@ -38,16 +38,11 @@ function readJson(filePath) {
 			var refreshIntervalId = setInterval(function() {
 				var pkmn = i<10?"00"+i:i<100?"0"+i:i
 				if ( i <= ( len ) ) {
-					var percent = (i/last_pokemon*100).toFixed(0)+"%"
-					document.getElementById("legend").innerHTML = fix + 
-					'<div class="init inactive"><div class="init">&nbsp;[&nbsp;' + percent + '&nbsp;]&nbsp;</div></div>'
-					setTimeout(function(){
-						printPokedex(pkmn);
-					}, 0);
+					printPokedex(pkmn);
 					if ( i == len ) {
+						document.addEventListener("backbutton", function (e) { e.preventDefault(); showDex(generation); }, false );
 						showDex(0);
 						swipePkdex();
-						document.addEventListener("backbutton", showDex(generation), false);
 					}
 				} else clearInterval(refreshIntervalId);
 				i++
@@ -99,8 +94,9 @@ function printPokedex(pkmn) {
 function showDex(n) {
 	document.getElementById("loading-mini").style.display='';
 	setTimeout(function(){
+		closeImage();
+		closeDetails();
 		generation = n;
-		closeImage(); closeDetails();
 		var list = document.querySelectorAll('.pkmn');
 		for(i=0; i<list.length; i++) list[i].style.display = "none";
 		document.getElementById("html").style.background = getBackground(n);

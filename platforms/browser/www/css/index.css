@@ -55,17 +55,6 @@ td {
 	color: whitesmoke;
 	transform: scaleX(0.75) scaleY(1.25);
 }
-.init {
-	background-color: transparent;
-	border: 0px;
-	width: 0px !important;
-	margin: 0px !important;
-	padding: 0px !important;
-	font-weight: bold;
-	cursor: defaul;
-	white-space:nowrap;
-	top: -12px;
-}
 
 /* POKEMON */
 .pkmn {
