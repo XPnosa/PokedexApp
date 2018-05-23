@@ -6,6 +6,8 @@ var generation = 0;
 
 var last_pokemon = 807;
 
+var load_completed = false;
+
 var app = {
 	initialize: function() {
 		this.bindEvents();
@@ -14,6 +16,8 @@ var app = {
 		document.addEventListener('deviceready', this.onDeviceReady, false);
 	},
 	onDeviceReady: function() {
+		dontBack();
+		document.addEventListener("backbutton", onBackKeyDown, false);
 		app.receivedEvent('deviceready');
 	},
 	receivedEvent: function(id) {
@@ -40,9 +44,9 @@ function readJson(filePath) {
 				if ( i <= ( len ) ) {
 					printPokedex(pkmn);
 					if ( i == len ) {
-						document.addEventListener("backbutton", function (e) { e.preventDefault(); showDex(generation); }, false );
 						showDex(0);
 						swipePkdex();
+						load_completed = true;
 					}
 				} else clearInterval(refreshIntervalId);
 				i++
@@ -116,8 +120,8 @@ function showDex(n) {
 }
 
 function shearchDex(region) {
-	var search = ""
-	search = prompt("Buscar pokemon en la Pokedex " + region);
+	var search = prompt("Buscar pokemon en la Pokedex " + region);
+	if ( search == null ) search = ""
 	if ( region == "Nacional" )
 		var list = document.querySelectorAll('.pkmn');
 	else
@@ -260,6 +264,22 @@ function swipePkdex(){
 	}, false); 
 }
 
+function dontBack(){
+	window.location.hash="no-back-button";
+	window.location.hash="Again-No-back-button"
+	window.onhashchange=function(){
+		window.location.hash="no-back-button";
+		if (load_completed)
+			showDex(generation);
+	}
+}
+
+function onBackKeyDown(e) {
+	e.preventDefault();
+	showDex(generation);
+}
+
 $(window).bind('resize',function(e) { fitDex(); });
 
 $(window).bind('orientationchange',function(e) { fitDex(); });
+
