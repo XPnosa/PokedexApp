@@ -55,6 +55,17 @@ td {
 	color: whitesmoke;
 	transform: scaleX(0.75) scaleY(1.25);
 }
+.init {
+	background-color: transparent;
+	border: 0px;
+	width: 0px !important;
+	margin: 0px !important;
+	padding: 0px !important;
+	font-weight: bold;
+	cursor: defaul;
+	white-space:nowrap;
+	top: -12px;
+}
 
 /* POKEMON */
 .pkmn {
@@ -131,7 +142,7 @@ td {
 #list {
 	overflow-y: auto;
 	position: relative;
-	top: -15px;
+	top: -16px;
 	margin: 2px;
 }
 #loading {
@@ -139,8 +150,8 @@ td {
 }
 #loading-mini {
 	position: absolute;
-	top: 1%;
-	right: 1%;
+	top: 1.5%;
+	right: 1.5%;
 	height: 1em;
 }
 #gallery, #details {
@@ -241,5 +252,15 @@ td {
 	}
 	table {
 		margin-top: 1em;
+	}
+	.active > div {
+		width: 150px;
+	}
+	legend {
+		font-size: 2em;
+	}
+	.inactive {
+		width: 0.75em;
+		top: -15px;
 	}
 }
