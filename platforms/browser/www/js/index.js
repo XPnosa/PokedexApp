@@ -44,7 +44,7 @@ function readJson(filePath) {
 				if ( i <= ( len ) ) {
 					var percent = (i/last_pokemon*100).toFixed(0)+"%"
 					document.getElementById("legend").innerHTML = fix + 
-					'<div class="init inactive"><div class="init">&nbsp;' + percent + '&nbsp;</div></div>'
+					'<div class="init inactive"><div class="init">&nbsp;' + percent + '&nbsp;</div></div>';
 					setTimeout(function(){
 						printPokedex(pkmn);
 					}, 0);
@@ -157,7 +157,8 @@ function showDetails(pkmn) {
 	type += "<div></center>";
 	info.innerHTML = "<img style='float: right;' class='pk_img' onclick='viewImage(\""+pkmn+"\")' src='img/favicon.png' />"
 	info.innerHTML += "<p class='title'>" + pkmn + " - " + pokedex[pkmn].nombre + "</p>" + desc  + "<hr />" + type
-	details.style.display = ""; fitDex();
+	details.style.display = ""; 
+	fitDex();
 }
 
 function closeDetails() {
@@ -252,7 +253,8 @@ function closeImage() {
 }
 
 function swipePkdex(){
-	var xIni, yIni;
+	var xIni;
+	var yIni;
 	var canvas = document.getElementById('pkdex');
 	canvas.addEventListener('touchstart', function(e){
 		if (e.targetTouches.length == 1) { 

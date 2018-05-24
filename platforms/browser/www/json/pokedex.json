@@ -91,7 +91,7 @@
     "info_x": "Blastoise lanza chorros de agua con gran precisión por los tubos que le salen del caparazón que tiene en la espalda. Puede disparar chorros de agua con tanta puntería que no fallaría al tirar contra una lata pequeña a 50 m.",
     "peso": "85,5 kg",
     "nombre": "Blastoise",
-    "altura": "1,5 m"
+    "altura": "1,6 m"
   },
   "010": {
     "info_y": "Caterpie tiene un apetito voraz. Es capaz de devorar hojas que superen su tamaño en un abrir y cerrar de ojos. Atención a la antena que tiene: libera un hedor realmente fuerte.",
@@ -153,9 +153,9 @@
       "Veneno"
     ],
     "info_x": "Los Beedrill defienden su territorio a toda costa. No es conveniente acercarse a su colmena, por seguridad. Si se les molesta, todo un enjambre atacará ferozmente.",
-    "peso": "40,5 kg",
+    "peso": "29,5 kg",
     "nombre": "Beedrill",
-    "altura": "1,4 m"
+    "altura": "1,0 m"
   },
   "016": {
     "info_y": "Pidgey tiene un sentido de la orientación muy desarrollado. Es capaz de regresar a su nido, por lejos que se encuentre de las zonas que le resultan familiares.",
@@ -984,7 +984,7 @@
     "info_x": "Si alguien ve que su sombra le adelanta de repente en una noche oscura, es muy probable que lo que esté viendo no sea su sombra, sino a un Gengar haciéndose pasar por la misma.",
     "peso": "40,5 kg",
     "nombre": "Gengar",
-    "altura": "1,4 m"
+    "altura": "1,5 m"
   },
   "095": {
     "info_y": "Onix tiene un imán en el cerebro, que actúa como una brújula para no perder la orientación cuando está cavando túneles. A medida que crece, se le redondea y suaviza el cuerpo.",
@@ -1075,7 +1075,7 @@
       "Psíquico"
     ],
     "info_x": "Exeggutor es originario del trópico. Cuando se expone a un sol intenso, le empiezan a crecer las cabezas. Hay quien dice que, cuando las cabezas caen al suelo, se unen para formar un Exeggcute.",
-    "peso": "120,6 kg",
+    "peso": "120,0 kg",
     "nombre": "Exeggutor",
     "altura": "2,0 m"
   },
@@ -1352,7 +1352,7 @@
       "Volador"
     ],
     "info_x": "Una vez que Gyarados se desmanda, la presión incontrolable y enrabiada de la sangre no se le calmará hasta que no haya quemado todo lo que le rodea. Según parece, a este Pokémon le duran los arranques de cólera hasta un mes.",
-    "peso": "305,0 kg",
+    "peso": "235,0 kg",
     "nombre": "Gyarados",
     "altura": "6,5 m"
   },
@@ -1564,7 +1564,7 @@
     "info_x": "Mewtwo fue creado por manipulación genética. Pero, a pesar de que el hombre creó su cuerpo, dotar a Mewtwo de un corazón compasivo quedó en el olvido.",
     "peso": "122,0 kg",
     "nombre": "Mewtwo",
-    "altura": "2.0 m"
+    "altura": "2,0 m"
   },
   "151": {
     "info_y": "Dicen que Mew posee el mapa genético de todos los Pokémon. Puede hacerse invisible cuando quiere, así que pasa desapercibido cada vez que se le acerca alguien.",
@@ -2169,9 +2169,9 @@
       "Tierra"
     ],
     "info_x": "Steelix vive a mayor profundidad aún que Onix. Se le conoce por su tendencia a excavar hacia el interior del planeta. Hay datos que muestran que este Pokémon ha llegado a alcanzar 1 km de profundidad.",
-    "peso": "10,5 m",
+    "peso": "400,0 kg",
     "nombre": "Steelix",
-    "altura": "Robustez"
+    "altura": "9,2 m"
   },
   "209": {
     "info_y": "Al tener los colmillos por fuera, Snubbull da miedo y espanta a los Pokémon pequeños, que huyen aterrados. Parece que a él le da un poco de pena que salgan huyendo.",
@@ -2211,9 +2211,9 @@
       "Acero"
     ],
     "info_x": "Scizor tiene un cuerpo duro como el acero que no es fácil de alterar con ningún ataque común. Este Pokémon bate las alas para regular la temperatura corporal.",
-    "peso": "2,0 m",
+    "peso": "118,0 kg",
     "nombre": "Scizor",
-    "altura": "Experto"
+    "altura": "1,8 m"
   },
   "213": {
     "info_y": "Shuckle permanece escondido bajo las rocas en silencio y, cuando se pone a comer las bayas que almacena, se encierra en el caparazón. Las bayas se mezclan con sus fluidos corporales y originan zumo.",
@@ -2233,9 +2233,9 @@
       "Lucha"
     ],
     "info_x": "Heracross tiene unas afiladas garras en los pies que se clavan con firmeza en la tierra o la corteza de los árboles, dando al Pokémon gran estabilidad y seguridad a la hora de embestir y herir a su rival con el cuerno que tiene.",
-    "peso": "1,7 m",
+    "peso": "54,0 kg",
     "nombre": "Heracross",
-    "altura": "Agallas"
+    "altura": "1,5 m"
   },
   "215": {
     "info_y": "Sneasel trepa por los árboles agarrándose a la corteza con las garras curvas que tiene. Este Pokémon busca nidos desprovistos de vigilancia paterna para robar los huevos y comérselos.",
@@ -2588,9 +2588,9 @@
       "Siniestro"
     ],
     "info_x": "Tyranitar tiene una fuerza imponente; es capaz de echar abajo una montaña para hacer su nido. Este Pokémon suele merodear por las zonas de montaña en busca de nuevos rivales contra los que luchar.",
-    "peso": "255,0 kg",
+    "peso": "202,0 kg",
     "nombre": "Tyranitar",
-    "altura": "2,5 m"
+    "altura": "2,0 m"
   },
   "249": {
     "info_y": "La fuerza que tiene Lugia en las alas es devastadora; con nada que las bata es capaz de derribar edificios enteros. Por eso mismo, prefiere vivir donde no haya nadie, en lo más profundo del mar.",
@@ -2651,9 +2651,9 @@
       "Planta"
     ],
     "info_x": "A Sceptile le crecen en la espalda unas semillas llenas de nutrientes que sirven para revitalizar los árboles. De hecho, se dedica a cuidarlos con mimo para que crezcan bien.",
-    "peso": "55,2 kg",
+    "peso": "52,2 kg",
     "nombre": "Sceptile",
-    "altura": "1,9 m"
+    "altura": "1,7 m"
   },
   "255": {
     "info_y": "Torchic no se separa de su Entrenador. Siempre va tras él con sus pasitos inseguros. Este Pokémon escupe bolas de fuego que pueden alcanzar los 1000 °C y carbonizar al enemigo.",
@@ -2715,9 +2715,9 @@
       "Tierra"
     ],
     "info_x": "Swampert puede predecir tormentas al percibir con las aletas los sutiles cambios que producen las olas y las corrientes. Si está a punto de estallar una tormenta, empezará a apilar piedras para resguardarse.",
-    "peso": "102,0 kg",
+    "peso": "81,9 kg",
     "nombre": "Swampert",
-    "altura": "1,9 m"
+    "altura": "1,5 m"
   },
   "261": {
     "info_y": "La primera reacción que Poochyena tiene al ver algo moverse es darle un mordisco. Este Pokémon persigue a su presa hasta que cae agotada. Aunque, a veces, sale huyendo si su presa le responde con un ataque.",
@@ -2949,9 +2949,9 @@
       "Hada"
     ],
     "info_x": "Gardevoir tiene el poder psicoquinético de alterar las dimensiones y crear un agujero negro pequeño. Este Pokémon intenta proteger siempre a su Entrenador aunque tenga que arriesgar su propia vida.",
-    "peso": "1,6 m",
+    "peso": "48,4 kg",
     "nombre": "Gardevoir",
-    "altura": "Rastro"
+    "altura": "1,6 m"
   },
   "283": {
     "info_y": "Surskit segrega un aceite por la punta de las patas que le permite caminar sobre el agua como si fuera patinando. Este Pokémon se alimenta de microorganismos en charcas y lagos.",
@@ -3336,9 +3336,9 @@
       "Siniestro"
     ],
     "info_x": "Sharpedo puede alcanzar nadando los 120 km/h agitando la aleta trasera y propulsándose por el agua. El punto flaco de este Pokémon es la imposibilidad que tiene de nadar largas distancias.",
-    "peso": "130,3 kg",
+    "peso": "88,8 kg",
     "nombre": "Sharpedo",
-    "altura": "2,5 m"
+    "altura": "1,8 m"
   },
   "320": {
     "info_y": "Wailmer tiene los espiráculos encima de la cabeza. A este juguetón Pokémon le encanta asustar a la gente expulsando el agua que acumula a través de estos orificios.",
@@ -3495,7 +3495,7 @@
     "info_x": "Altaria canta de maravilla, como una soprano. Tiene unas alas que parecen nubes de algodón. Este Pokémon aprovecha las corrientes ascendentes y remonta el vuelo con sus flamantes alas hacia la inmensidad del cielo azul.",
     "peso": "20,6 kg",
     "nombre": "Altaria",
-    "altura": "1,5 m"
+    "altura": "1,1 m"
   },
   "335": {
     "info_y": "Los ecos del combate mantenido con su rival más feroz, Seviper, resuenan aún en cada célula de Zangoose. Este Pokémon esquiva los ataques con auténtica destreza.",
@@ -3900,9 +3900,9 @@
       "Volador"
     ],
     "info_x": "Al evolucionar Shelgon y convertirse por fin en Salamence, ve cumplido el sueño de su vida de tener alas. Para expresar su alegría, Salamence vuela y revolotea por el cielo al tiempo que lanza llamas por la boca.",
-    "peso": "112,6 kg",
+    "peso": "102,6 kg",
     "nombre": "Salamence",
-    "altura": "1,8 m"
+    "altura": "1,5 m"
   },
   "374": {
     "info_y": "En lugar de sangre, Beldum tiene una poderosa fuerza magnética corriéndole por las venas. Este Pokémon se comunica enviando controlados impulsos magnéticos.",
@@ -3933,9 +3933,9 @@
       "Psíquico"
     ],
     "info_x": "Metagross es el resultado de la fusión de dos Metang. Cuando caza, acorrala a su presa, sujetándola contra el suelo con el cuerpo. Después, devora a la víctima indefensa con la gran boca del estómago.",
-    "peso": "942,9 kg",
+    "peso": "550,0 kg",
     "nombre": "Metagross",
-    "altura": "2,5 m"
+    "altura": "1,6 m"
   },
   "377": {
     "info_y": "A Regirock lo mantuvieron encerrado y aislado hace tiempo. Dicen que, si resulta dañado en combate, se pone él mismo a buscar piedras parecidas a las suyas y se las pone para recomponerse.",
@@ -3974,9 +3974,9 @@
       "Psíquico"
     ],
     "info_x": "Latias tiene un nivel de inteligencia tan alto que es capaz de entender el lenguaje humano. Este Pokémon usa el plumón cristalizado del que está cubierto como peto para refractar la luz y cambiar de aspecto.",
-    "peso": "52,0 kg",
+    "peso": "40,0 kg",
     "nombre": "Latias",
-    "altura": "1,8 m"
+    "altura": "1,4 m"
   },
   "381": {
     "info_y": "Latios tiene la habilidad de hacer que los demás vean algo que él ha visto o imaginado. Este Pokémon es muy inteligente. Es capaz de entender el lenguaje humano.",
@@ -3985,9 +3985,9 @@
       "Psíquico"
     ],
     "info_x": "Latios solo le abre el corazón a los Entrenadores compasivos. A la hora de volar, este Pokémon pliega las patas delanteras para minimizar la resistencia al aire y supera en velocidad a un avión a reacción.",
-    "peso": "70,0 kg",
+    "peso": "60,0 kg",
     "nombre": "Latios",
-    "altura": "2,3 m"
+    "altura": "2,0 m"
   },
   "382": {
     "info_y": "Kyogre se sirve de la energía de la naturaleza para realizar su Regresión Primigenia y recobrar su apariencia primitiva. Con tal poder, puede desencadenar tempestades para expandir los océanos.",
@@ -3995,9 +3995,9 @@
       "Agua"
     ],
     "info_x": "A Kyogre siempre se le ha descrito como el Pokémon que expandió los océanos. Varias leyendas cuentan que libró combates contra Groudon en repetidas ocasiones para tener el control de la energía de la naturaleza.",
-    "peso": "430,0 kg",
+    "peso": "352,0 kg",
     "nombre": "Kyogre",
-    "altura": "9,8 m"
+    "altura": "4,5 m"
   },
   "383": {
     "info_y": "A Groudon siempre se le ha descrito como el Pokémon que expandió los continentes. Varias leyendas cuentan que libró combates contra Kyogre en repetidas ocasiones para tener el control de la energía de la naturaleza.",
@@ -4005,9 +4005,9 @@
       "Tierra"
     ],
     "info_x": "Groudon se sirve de la energía de la naturaleza para realizar su Regresión Primigenia y recobrar su apariencia primitiva. Con tal poder, puede crear magma para expandir los continentes.",
-    "peso": "999,7 kg",
+    "peso": "950,0 kg",
     "nombre": "Groudon",
-    "altura": "5,0 m"
+    "altura": "3,5 m"
   },
   "384": {
     "info_y": "Dicen que Rayquaza ha vivido durante millones de años. Las leyendas cuentan que puso fin al continuo enfrentamiento entre Groudon y Kyogre.",
@@ -4016,9 +4016,9 @@
       "Volador"
     ],
     "info_x": "Rayquaza ha vivido en la capa de ozono durante millones de años, alimentándose de meteoritos. La energía de estos meteoritos se acumula en su cuerpo y le permite megaevolucionar.",
-    "peso": "392,0 kg",
+    "peso": "206,5 kg",
     "nombre": "Rayquaza",
-    "altura": "10,8 m"
+    "altura": "7,0 m"
   },
   "385": {
     "info_y": "Cuenta la leyenda que Jirachi hará realidad cualquier deseo que se le escriba en las notas que lleva en la cabeza cuando las lea tras salir de su letargo. Si este Pokémon siente peligro, luchará sin haber llegado a despertarse.",
@@ -4815,9 +4815,9 @@
       "Hielo"
     ],
     "info_x": "Vive en paz en cordilleras de nieves eternas. Genera ventiscas para ocultarse.",
-    "peso": "185,0 kg",
+    "peso": "135,5 kg",
     "nombre": "Abomasnow",
-    "altura": "2,7 m"
+    "altura": "2,2 m"
   },
   "461": {
     "info_y": "Vive en zonas nevadas. Deja marcas en los árboles con sus garras para comunicarse con sus compañeros.",
@@ -4973,7 +4973,7 @@
       "Lucha"
     ],
     "info_x": "Lucha con las espadas que salen de sus codos. Es un maestro de la cortesía y la esgrima.",
-    "peso": "56,4 kg",
+    "peso": "52,0 kg",
     "nombre": "Gallade",
     "altura": "1,6 m"
   },
@@ -5100,9 +5100,9 @@
       "Dragón"
     ],
     "info_x": "Fue desterrado por su violencia. Observa el mundo en silencio desde el Mundo Distorsión.",
-    "peso": "650,0 kg",
+    "peso": "750,0 kg",
     "nombre": "Giratina",
-    "altura": "6,9 m"
+    "altura": "4,5 m"
   },
   "488": {
     "info_y": "Sus alas emiten un velo de partículas brillantes. Se dice que representa un cuarto lunar.",
@@ -5150,9 +5150,9 @@
       "Planta"
     ],
     "info_x": "Se dice que, cuando florecen las Gracídeas, Shaymin alza el vuelo para mostrar su gratitud.",
-    "peso": "5,2 kg",
+    "peso": "2,1 kg",
     "nombre": "Shaymin",
-    "altura": "0,4 m"
+    "altura": "0,2 m"
   },
   "493": {
     "info_y": "Según la mitología de Sinnoh, Arceus surgió de un huevo y después creó todo el mundo.",
@@ -6708,7 +6708,7 @@
     "info_x": "La energía que desprende de su cola genera violentas tempestades capaces de echar abajo casas.",
     "peso": "63,0 kg",
     "nombre": "Tornadus",
-    "altura": "1,4 m"
+    "altura": "1,5 m"
   },
   "642": {
     "info_y": "Lanza descargas eléctricas por las púas de su cola. Sobrevuela Teselia dejando caer rayos.",
@@ -6719,7 +6719,7 @@
     "info_x": "Su gusto por surcar el cielo lanzando rayos y provocando incendios forestales le ha granjeado pocas simpatías.",
     "peso": "61,0 kg",
     "nombre": "Thundurus",
-    "altura": "3,0 m"
+    "altura": "1,5 m"
   },
   "643": {
     "info_y": "Pokémon legendario capaz de abrasar el mundo con sus llamas. Ayuda a quienes persiguen un mundo veraz.",
@@ -6752,7 +6752,7 @@
     "info_x": "Utiliza energía que obtiene del viento y del relámpago para nutrir el suelo y generar abundantes cosechas.",
     "peso": "68,0 kg",
     "nombre": "Landorus",
-    "altura": "1,3 m"
+    "altura": "1,5 m"
   },
   "646": {
     "info_y": "Pokémon legendario que aguarda al héroe que compense el vacío de su cuerpo de hielo con verdad e ideales.",
@@ -6763,7 +6763,7 @@
     "info_x": "Produce en su interior una intensa energía gélida, y cualquier fuga hace que su cuerpo se congele.",
     "peso": "325,0 kg",
     "nombre": "Kyurem",
-    "altura": "3,3 m"
+    "altura": "3,0 m"
   },
   "647": {
     "info_y": "Corre por mares, ríos o cualquier superficie acuática de todo el mundo. Aparece en aguas límpidas.",
@@ -7524,7 +7524,7 @@
     "info_x": "Se cree que este Pokémon vela por el equilibrio del ecosistema. Se rumorea que en su interior yace un poder que va más allá de la imaginación.",
     "peso": "305,0 kg",
     "nombre": "Zygarde",
-    "altura": "5.0 m"
+    "altura": "5,0 m"
   },
   "719": {
     "info_y": "Es una transformación súbita de Carbink. Se dice que su cuerpo, que irradia destellos rosados, es lo más bonito de este mundo.",
@@ -7533,9 +7533,9 @@
       "Hada"
     ],
     "info_x": "Puede crear una gran cantidad de diamantes en un instante comprimiendo con las manos el carbono que flota en el aire.",
-    "peso": "27,8 kg",
+    "peso": "8,8 kg",
     "nombre": "Diancie",
-    "altura": "1,1 m"
+    "altura": "0,7 m"
   },
   "720": {
     "info_y": "En su forma original, este Pokémon posee una fuerza\r descomunal. Una leyenda cuenta que una vez robó un tesoro\r del interior de una fortaleza.",
@@ -7544,9 +7544,9 @@
       "Fantasma"
     ],
     "info_x": "Dicen que gracias a sus seis anillos y seis enormes brazos\r puede robar todo lo que se le antoja.\r Adquirió una forma reducida cuando alguien selló su poder.",
-    "peso": "490,0 kg",
+    "peso": "9,0 kg",
     "nombre": "Hoopa",
-    "altura": "6,5 m"
+    "altura": "0,5 m"
   },
   "721": {
     "info_y": "Expulsa vapor y desaparece entre la densa niebla. Dicen que habita en montañas solitarias.",
@@ -7819,9 +7819,9 @@
       "Agua"
     ],
     "info_x": "Debido a su aspecto débil y a su apetitoso sabor, son el blanco de muchos depredadores, pero quien se las ve con ellos sale mal parado.",
-    "peso": "78,6 kg",
+    "peso": "0,3 kg",
     "nombre": "Wishiwashi",
-    "altura": "8,2 m"
+    "altura": "0,2 m"
   },
   "747": {
     "info_y": "Aturde a su presa con los aguijones venenosos de la cabeza. Cuando esta se debilita, la rodea con sus diez extremidades y la remata.",
@@ -8115,7 +8115,7 @@
       "Volador"
     ],
     "info_x": "Este Pokémon nació fruto de la mutación de nanopartículas. El caparazón que lo recubre se desprende al recibir un fuerte impacto.",
-    "peso": "0,3 kg",
+    "peso": "40,0 kg",
     "nombre": "Minior",
     "altura": "0,3 m"
   },
@@ -8397,7 +8397,7 @@
     "info_x": "Este Ultraente parece alimentarse de luz. Posee un carácter muy hostil y no duda en lanzar rayos láser.",
     "peso": "230,0 kg",
     "nombre": "Necrozma",
-    "altura": "7,5 m"
+    "altura": "2,4 m"
   },
   "801": {
     "info_y": "Pokémon artificial creado hace más de 500 años. Es capaz de entender el lenguaje humano, pero carece de la facultad del habla.",
