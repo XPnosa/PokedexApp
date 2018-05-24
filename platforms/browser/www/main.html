@@ -8,23 +8,13 @@
 		<link href="css/index.css" rel="stylesheet">
 	</head>
 	<body id="body">
+		<fieldset id="pkdex"></fieldset>
+		<img id="loading-mini" src="img/loading.gif" />
 		<script type="text/javascript" src="cordova.js"></script>
 		<script type="text/javascript" src="js/jquery.js"></script>
-		<script type="text/javascript">
-			var app = {
-				initialize: function() {
-					this.bindEvents();
-				},
-				bindEvents: function() {
-					document.addEventListener('deviceready', this.onDeviceReady, false);
-				},
-				onDeviceReady: function() {
-					app.receivedEvent('deviceready');
-				},
-				receivedEvent: function(id) {
-					location.href="main.html"
-				}
-			}; app.initialize();
-		</script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript">app.initialize();</script>
+		<div id="gallery" onclick="closeImage();" style="display:none;"><img id="photo-full" /></div>
+		<div id="details" onclick="closeDetails();" style="display:none;"><img id="photo" /><div id="info"></div></div>
 	</body>
 </html>
