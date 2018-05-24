@@ -155,7 +155,7 @@ function showDetails(pkmn) {
 	var type = "<center><div class='pk_types_info'>";
 	for (var t=0;t<pokedex[pkmn].tipo.length;t++) type += "<div class='pk_type "+pokedex[pkmn].tipo[t]+"'><span>"+pokedex[pkmn].tipo[t]+"</span></div>";
 	type += "<div></center>";
-	info.innerHTML = "<img style='float: right;' class='pk_img' onclick='viewImage(\""+pkmn+"\")' src='pkmn/"+pkmn+".png' />"
+	info.innerHTML = "<img style='float: right;' class='pk_img' onclick='viewImage(\""+pkmn+"\")' src='img/favicon.png' />"
 	info.innerHTML += "<p class='title'>" + pkmn + " - " + pokedex[pkmn].nombre + "</p>" + desc  + "<hr />" + type
 	details.style.display = ""; fitDex();
 }
