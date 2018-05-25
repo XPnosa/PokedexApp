@@ -8,6 +8,8 @@ var last_pokemon = 807;
 
 var load_completed = false;
 
+var alt_forms = ["003_f2","006_f2","006_f3","009_f2","015_f2","018_f2","019_f2","020_f2","026_f2","027_f2","028_f2","037_f2","038_f2","050_f2","051_f2","052_f2","053_f2","065_f2","074_f2","075_f2","076_f2","080_f2","088_f2","089_f2","094_f2","103_f2","105_f2","115_f2","127_f2","130_f2","142_f2","150_f2","150_f3","181_f2","208_f2","212_f2","214_f2","229_f2","248_f2","254_f2","257_f2","260_f2","282_f2","302_f2","303_f2","306_f2","308_f2","310_f2","319_f2","323_f2","334_f2","354_f2","359_f2","362_f2","373_f2","376_f2","380_f2","381_f2","382_f2","383_f2","384_f2","386_f2","386_f3","386_f4","412_f2","412_f3","413_f2","413_f3","421_f2","422_f2","423_f2","428_f2","445_f2","448_f2","460_f2","475_f2","487_f2","492_f2","521_f2","531_f2","550_f2","555_f2","585_f2","585_f3","585_f4","586_f2","586_f3","586_f4","592_f2","593_f2","641_f2","642_f2","643_f2","644_f2","645_f2","646_f2","646_f3","647_f2","648_f2","658_f2","668_f2","676_f2","676_f3","676_f4","678_f2","681_f2","718_f2","718_f3","719_f2","720_f2","741_f2","741_f3","741_f4","745_f2","746_f2","774_f2","800_f2","800_f3","800_f4"]
+
 var app = {
 	initialize: function() {
 		this.bindEvents();
@@ -154,8 +156,9 @@ function showDetails(pkmn) {
 	var type = "<center><div class='pk_types_info'>";
 	for (var t=0;t<pokedex[pkmn].tipo.length;t++) type += "<div class='pk_type "+pokedex[pkmn].tipo[t]+"'><span>"+pokedex[pkmn].tipo[t]+"</span></div>";
 	type += "<div></center>";
-	for (var f=4;f>=2;f--) if (imgExists("pkmn/"+pkmn+"_f"+f+".png")) 
-	info.innerHTML += "<img style='float: right; padding-left: 5px;' class='pk_img' onclick='viewImage(\""+pkmn+"_f"+f+"\")' src='img/ball_"+f+".png' />";
+	for (var f=4;f>=2;f--) 
+		if (alt_forms.includes(pkmn+"_f"+f)) 
+			info.innerHTML += "<img style='float: right; padding-left: 5px;' class='pk_img' onclick='viewImage(\""+pkmn+"_f"+f+"\")' src='img/ball_"+f+".png' />";
 	info.innerHTML += "<img style='float: right;' class='pk_img' onclick='viewImage(\""+pkmn+"\")' src='img/ball_1.png' />";
 	info.innerHTML += "<p class='title'><span id='num'>" + pkmn + " - </span>" + pokedex[pkmn].nombre + "</p>" + desc  + "<hr />" + type;
 	details.style.display = ""; 
@@ -274,14 +277,6 @@ function swipePkdex(){
 			if((touch.pageX<xIni-20) && (touch.pageY> yIni-5) && (touch.pageY<yIni+5) && (generation<7)) showDex(++generation);
 		}
 	}, false); 
-}
-
-function imgExists(img)
-{
-	var http = new XMLHttpRequest();
-	http.open('HEAD', img, false);
-	http.send();
-	return http.status!=404;
 }
 
 function dontBack(){
