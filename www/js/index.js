@@ -226,7 +226,7 @@ function getBackground(n) {
 		case 6:
 			colors = "darkblue 50%, darkred 50%"; break;
 		case 7:
-			colors = "gold 50%, blue 50%"; break;
+			colors = "orange 50%, royalblue 50%"; break;
 		default: 
 			colors = "red 50%, white 50%";
 	}

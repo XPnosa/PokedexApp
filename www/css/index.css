@@ -66,6 +66,7 @@ td {
 	padding: 5px;
 	position: relative;
 	background-color: #222;
+	margin-right: 0.2em;
 }
 .pkmn:hover {
 	background-color: #333;
@@ -137,7 +138,6 @@ td {
 	border: 0px !important;
 	width: 0px !important;
 	padding: 0px 0px 6.5px 0px;
-	font-weight: bold;
 	cursor: defaul;
 	white-space:nowrap;
 	transform: scaleX(0.75) scaleY(0.75) !important;
@@ -216,11 +216,11 @@ td {
 	width: 0.33em;
 }
 ::-webkit-scrollbar-thumb {
-	background: rgba(255,255,255,0.2); 
+	background: rgba(255,255,255,0.5); 
 	border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:window-inactive {
-	background: rgba(255,255,255,0.1); 
+	background: rgba(255,255,255,0.2); 
 }
 
 /* SMALL */
