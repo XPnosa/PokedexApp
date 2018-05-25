@@ -211,6 +211,18 @@ td {
 .Siniestro{background:#705848;background-image:-webkit-linear-gradient(#705848,#513f34);background-image:linear-gradient(#705848,#513f34);border-color:#362a23}
 .Hada{background:#e898e8;background-image:-webkit-linear-gradient(#e898e8,#de6ede);background-image:linear-gradient(#e898e8,#de6ede);border-color:#d547d5}
 
+/* SCROLLBARS */
+::-webkit-scrollbar {
+	width: 0.33em;
+}
+::-webkit-scrollbar-thumb {
+	background: rgba(255,255,255,0.2); 
+	border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,255,255,0.1); 
+}
+
 /* SMALL */
 @media (max-width: 400px) {
 	.pk_types {
@@ -273,6 +285,9 @@ td {
 	}
 	#loading-mini {
 		height: 1.5em;
+	}
+	::-webkit-scrollbar {
+		width: 0.66em;
 	}
 }
 

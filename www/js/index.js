@@ -31,7 +31,6 @@ function readJson(filePath) {
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 			document.getElementById("list").innerHTML = ''; fitDex()
-			var fix = document.getElementById("legend").innerHTML
 			var pokemon = JSON.parse(xmlhttp.responseText);
 			var len = Object.keys(pokemon).length;
 			for (i=1;i<=len;i++) {
@@ -42,12 +41,7 @@ function readJson(filePath) {
 			var refreshIntervalId = setInterval(function() {
 				var pkmn = i<10?"00"+i:i<100?"0"+i:i
 				if ( i <= ( len ) ) {
-					var percent = (i/last_pokemon*100).toFixed(0)+"%"
-					document.getElementById("legend").innerHTML = fix + 
-					'<div class="init inactive"><div class="init">&nbsp;' + percent + '&nbsp;</div></div>';
-					setTimeout(function(){
-						printPokedex(pkmn);
-					}, 0);
+					printPokedex(pkmn);
 					if ( i == len ) {
 						showDex(0);
 						swipePkdex();
@@ -82,7 +76,8 @@ function fitDex() {
 }
 
 function printLegend(pkmn) {
-	var legend = '<div style="cursor:default;" class="active"><div>Nacional</div></div>';
+	var legend = '<div style="cursor:default;" class="active"><div>Nacional</div></div>' +
+	'<div class="init inactive"><div class="init">&nbsp;</div></div>'
 	document.getElementById("pkdex").innerHTML = "<legend id='legend'>"+legend+"</legend>" + 
 	"<div id='list'><center><img id='loading' title='Cargando...' src='img/loading.gif' /></center></div>";
 }
@@ -239,6 +234,9 @@ function getBackground(n) {
 }
 
 function viewImage(pkmn) {
+	if (!e) var e = window.event;
+	e.cancelBubble = true;
+	if (e.stopPropagation) e.stopPropagation();
 	var photo = document.getElementById("photo-full");
 	var gallery = document.getElementById("gallery");
 	photo.src = "pkmn/"+pkmn+".png";
@@ -253,8 +251,7 @@ function closeImage() {
 }
 
 function swipePkdex(){
-	var xIni;
-	var yIni;
+	var xIni, yIni;
 	var canvas = document.getElementById('pkdex');
 	canvas.addEventListener('touchstart', function(e){
 		if (e.targetTouches.length == 1) { 
@@ -277,7 +274,6 @@ function dontBack(){
 	window.location.hash="Again-No-back-button"
 	window.onhashchange=function(){
 		window.location.hash="no-back-button";
-		if (load_completed) showDex(generation);
 		closeImage();
 		closeDetails(); 
 	}
@@ -285,7 +281,6 @@ function dontBack(){
 
 function onBackKeyDown(e) {
 	e.preventDefault();
-	if (load_completed) showDex(generation);
 	closeImage();
 	closeDetails(); 
 }
