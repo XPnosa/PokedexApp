@@ -73,6 +73,10 @@ function fitDex() {
 		photo.style.width = "99%";
 		photo.style.height = "auto";
 	}
+	try {
+		if ( h3 <= 350 ) document.getElementById("num").style.display = 'none';
+		else document.getElementById("num").style.display = '';
+	} catch(err) { null; }
 }
 
 function printLegend(pkmn) {
@@ -150,8 +154,10 @@ function showDetails(pkmn) {
 	var type = "<center><div class='pk_types_info'>";
 	for (var t=0;t<pokedex[pkmn].tipo.length;t++) type += "<div class='pk_type "+pokedex[pkmn].tipo[t]+"'><span>"+pokedex[pkmn].tipo[t]+"</span></div>";
 	type += "<div></center>";
-	info.innerHTML = "<img style='float: right;' class='pk_img' onclick='viewImage(\""+pkmn+"\")' src='img/favicon.png' />"
-	info.innerHTML += "<p class='title'>" + pkmn + " - " + pokedex[pkmn].nombre + "</p>" + desc  + "<hr />" + type
+	for (var f=4;f>=2;f--) if (imgExists("pkmn/"+pkmn+"_f"+f+".png")) 
+	info.innerHTML += "<img style='float: right; padding-left: 5px;' class='pk_img' onclick='viewImage(\""+pkmn+"_f"+f+"\")' src='img/ball_"+f+".png' />";
+	info.innerHTML += "<img style='float: right;' class='pk_img' onclick='viewImage(\""+pkmn+"\")' src='img/ball_1.png' />";
+	info.innerHTML += "<p class='title'><span id='num'>" + pkmn + " - </span>" + pokedex[pkmn].nombre + "</p>" + desc  + "<hr />" + type;
 	details.style.display = ""; 
 	fitDex();
 }
@@ -251,7 +257,8 @@ function closeImage() {
 }
 
 function swipePkdex(){
-	var xIni, yIni;
+	var xIni;
+	var yIni;
 	var canvas = document.getElementById('pkdex');
 	canvas.addEventListener('touchstart', function(e){
 		if (e.targetTouches.length == 1) { 
@@ -267,6 +274,14 @@ function swipePkdex(){
 			if((touch.pageX<xIni-20) && (touch.pageY> yIni-5) && (touch.pageY<yIni+5) && (generation<7)) showDex(++generation);
 		}
 	}, false); 
+}
+
+function imgExists(img)
+{
+	var http = new XMLHttpRequest();
+	http.open('HEAD', img, false);
+	http.send();
+	return http.status!=404;
 }
 
 function dontBack(){

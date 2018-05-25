@@ -124,10 +124,15 @@ td {
 	top: 50%;
 	transform: translate(-50%, -50%);
 }
+
+/* INFO */
 .title {
 	margin-top: 5px;
 	font-size: 20px;
 	font-weight: bold;
+	white-space: nowrap;
+	overflow-x: hidden;
+	text-overflow: ellipsis;
 }
 .altura, .peso {
 	display: none;
