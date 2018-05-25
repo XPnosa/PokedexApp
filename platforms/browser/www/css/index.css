@@ -292,7 +292,7 @@ td {
 		height: 1.5em;
 	}
 	::-webkit-scrollbar {
-		width: 2em;
+		width: 1.5em;
 	}
 }
 
