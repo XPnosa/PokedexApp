@@ -218,7 +218,7 @@ td {
 
 /* SCROLLBARS */
 ::-webkit-scrollbar {
-	width: 0.33em;
+	width: 1em;
 }
 ::-webkit-scrollbar-thumb {
 	background: rgba(255,255,255,0.5); 
@@ -292,7 +292,7 @@ td {
 		height: 1.5em;
 	}
 	::-webkit-scrollbar {
-		width: 0.66em;
+		width: 2em;
 	}
 }
 
