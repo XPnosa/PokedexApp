@@ -6,9 +6,13 @@ var generation = 0;
 
 var last_pokemon = 807;
 
+var current_pokemon = 0;
+
+var current_alt_image = 1;
+
 var load_completed = false;
 
-var alt_forms = ["003_f2","006_f2","006_f3","009_f2","015_f2","018_f2","019_f2","020_f2","026_f2","027_f2","028_f2","037_f2","038_f2","050_f2","051_f2","052_f2","053_f2","065_f2","074_f2","075_f2","076_f2","080_f2","088_f2","089_f2","094_f2","103_f2","105_f2","115_f2","127_f2","130_f2","142_f2","150_f2","150_f3","181_f2","208_f2","212_f2","214_f2","229_f2","248_f2","254_f2","257_f2","260_f2","282_f2","302_f2","303_f2","306_f2","308_f2","310_f2","319_f2","323_f2","334_f2","354_f2","359_f2","362_f2","373_f2","376_f2","380_f2","381_f2","382_f2","383_f2","384_f2","386_f2","386_f3","386_f4","412_f2","412_f3","413_f2","413_f3","421_f2","422_f2","423_f2","428_f2","445_f2","448_f2","460_f2","475_f2","487_f2","492_f2","521_f2","531_f2","550_f2","555_f2","585_f2","585_f3","585_f4","586_f2","586_f3","586_f4","592_f2","593_f2","641_f2","642_f2","643_f2","644_f2","645_f2","646_f2","646_f3","647_f2","648_f2","658_f2","668_f2","676_f2","676_f3","676_f4","678_f2","681_f2","718_f2","718_f3","719_f2","720_f2","741_f2","741_f3","741_f4","745_f2","746_f2","774_f2","800_f2","800_f3","800_f4"]
+var alt_forms = ["003_f2","006_f2","006_f3","009_f2","015_f2","018_f2","019_f2","020_f2","026_f2","027_f2","028_f2","037_f2","038_f2","050_f2","051_f2","052_f2","053_f2","065_f2","074_f2","075_f2","076_f2","080_f2","088_f2","089_f2","094_f2","103_f2","105_f2","115_f2","127_f2","130_f2","142_f2","150_f2","150_f3","181_f2","208_f2","212_f2","214_f2","229_f2","248_f2","254_f2","257_f2","260_f2","282_f2","302_f2","303_f2","306_f2","308_f2","310_f2","319_f2","323_f2","334_f2","354_f2","359_f2","362_f2","373_f2","376_f2","380_f2","381_f2","382_f2","383_f2","384_f2","386_f2","386_f3","386_f4","412_f2","412_f3","413_f2","413_f3","421_f2","422_f2","423_f2","428_f2","445_f2","448_f2","460_f2","475_f2","487_f2","492_f2","521_f2","531_f2","550_f2","585_f2","585_f3","585_f4","586_f2","586_f3","586_f4","592_f2","593_f2","641_f2","642_f2","643_f2","644_f2","645_f2","646_f2","646_f3","647_f2","648_f2","658_f2","668_f2","676_f2","676_f3","676_f4","678_f2","681_f2","718_f2","718_f3","719_f2","720_f2","741_f2","741_f3","741_f4","745_f2","746_f2","774_f2","800_f2","800_f3","800_f4"]
 
 var app = {
 	initialize: function() {
@@ -32,7 +36,8 @@ function readJson(filePath) {
 	xmlhttp.open("GET", filePath, true);
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-			document.getElementById("list").innerHTML = ''; fitDex()
+			//document.getElementById("list").innerHTML = '<img id="loading" src="img/loading.gif"/>'; 
+			fitDex();
 			var pokemon = JSON.parse(xmlhttp.responseText);
 			var len = Object.keys(pokemon).length;
 			for (i=1;i<=len;i++) {
@@ -46,8 +51,13 @@ function readJson(filePath) {
 					printPokedex(pkmn);
 					if ( i == len ) {
 						showDex(0);
+						swipePkmn();
+						swipeImage();
 						swipePkdex();
 						load_completed = true;
+						document.getElementById("loading").style.display = 'none';
+						var list = document.getElementsByClassName('pkmn');
+						for(i=0; i<list.length; i++) list[i].classList.add("visible");
 					}
 				} else clearInterval(refreshIntervalId);
 				i++
@@ -85,7 +95,7 @@ function printLegend(pkmn) {
 	var legend = '<div style="cursor:default;" class="active"><div>Nacional</div></div>' +
 	'<div class="init inactive"><div class="init">&nbsp;</div></div>'
 	document.getElementById("pkdex").innerHTML = "<legend id='legend'>"+legend+"</legend>" + 
-	"<div id='list'><center><img id='loading' title='Cargando...' src='img/loading.gif' /></center></div>";
+	"<div id='list'><img id='loading' title='Cargando...' src='img/loading.gif' /></div>";
 }
 
 function printPokedex(pkmn) {
@@ -148,6 +158,7 @@ function showDetails(pkmn) {
 	var details = document.getElementById("details");
 	var photo = document.getElementById("photo");
 	var info = document.getElementById("info");
+	current_pokemon = parseInt(pkmn, 10);
 	var desc = pokedex[pkmn].info_x;
 	if ( desc != pokedex[pkmn].info_y ) desc += " " + pokedex[pkmn].info_y;
 	desc += "<center><table><tr><td><b>Altura</b>: "+pokedex[pkmn].altura+"</td>";
@@ -158,10 +169,13 @@ function showDetails(pkmn) {
 	type += "<div></center>";
 	for (var f=4;f>=2;f--) 
 		if (alt_forms.includes(pkmn+"_f"+f)) 
-			info.innerHTML += "<img style='float: right; padding-left: 5px;' class='pk_img' onclick='viewImage(\""+pkmn+"_f"+f+"\")' src='img/ball_"+f+".png' />";
-	info.innerHTML += "<img style='float: right;' class='pk_img' onclick='viewImage(\""+pkmn+"\")' src='img/ball_1.png' />";
+			info.innerHTML += "<img style='float: right; padding-left: 5px;' class='pk_img pokeball' onclick='viewImage(\""+pkmn+"_f"+f+"\")' src='img/ball_"+f+".png' />";
+	info.innerHTML += "<img style='float: right;' class='pk_img pokeball' onclick='viewImage(\""+pkmn+"\")' src='img/ball_1.png' />";
 	info.innerHTML += "<p class='title'><span id='num'>" + pkmn + " - </span>" + pokedex[pkmn].nombre + "</p>" + desc  + "<hr />" + type;
 	details.style.display = ""; 
+	var ball_list = document.getElementsByClassName('pokeball');
+	for(i=0; i<ball_list.length; i++) 
+		ball_list[i].addEventListener('touchend', function(e){e.stopPropagation();}, false); 
 	fitDex();
 }
 
@@ -248,6 +262,11 @@ function viewImage(pkmn) {
 	if (e.stopPropagation) e.stopPropagation();
 	var photo = document.getElementById("photo-full");
 	var gallery = document.getElementById("gallery");
+	current_pokemon = parseInt(pkmn.replace("_f2","").replace("_f3","").replace("_f4",""), 10);
+	if ( pkmn.substr(pkmn.length - 3) == "_f4" ) current_alt_image = 4
+	else if ( pkmn.substr(pkmn.length - 3) == "_f3" ) current_alt_image = 3
+	else if ( pkmn.substr(pkmn.length - 3) == "_f2" ) current_alt_image = 2
+	else current_alt_image = 1
 	photo.src = "pkmn/"+pkmn+".png";
 	gallery.style.display = "";
 }
@@ -260,8 +279,7 @@ function closeImage() {
 }
 
 function swipePkdex(){
-	var xIni;
-	var yIni;
+	var xIni, yIni;
 	var canvas = document.getElementById('pkdex');
 	canvas.addEventListener('touchstart', function(e){
 		if (e.targetTouches.length == 1) { 
@@ -273,8 +291,85 @@ function swipePkdex(){
 	canvas.addEventListener('touchmove', function(e){
 		if (e.targetTouches.length == 1) { 
 			var touch = e.targetTouches[0]; 
-			if((touch.pageX>xIni+20) && (touch.pageY> yIni-5) && (touch.pageY<yIni+5) && (generation>0)) showDex(--generation);
-			if((touch.pageX<xIni-20) && (touch.pageY> yIni-5) && (touch.pageY<yIni+5) && (generation<7)) showDex(++generation);
+			xFin = touch.pageX;
+			yFin = touch.pageY;
+		}
+	}, false);
+	canvas.addEventListener('touchend', function(e){
+		if (e.targetTouches.length == 0) { 
+			var touch = e.targetTouches[0]; 
+			if((xFin>xIni+30) && (yFin>yIni-20) && (yFin<yIni+20) && (generation>0)) showDex(--generation);
+			if((xFin<xIni-30) && (yFin>yIni-20) && (yFin<yIni+20) && (generation<7)) showDex(++generation);
+		}
+	}, false); 
+}
+
+function swipePkmn(){
+	var xIni, yIni;
+	var canvas = document.getElementById('details');
+	canvas.addEventListener('touchstart', function(e){
+		if (e.targetTouches.length == 1) { 
+			var touch = e.targetTouches[0]; 
+			xIni = touch.pageX;
+			yIni = touch.pageY;
+		}
+	}, false);
+	canvas.addEventListener('touchmove', function(e){
+		if (e.targetTouches.length == 1) { 
+			var touch = e.targetTouches[0]; 
+			xFin = touch.pageX;
+			yFin = touch.pageY;
+		}
+	}, false);
+	canvas.addEventListener('touchend', function(e){
+		if (e.targetTouches.length == 0) { 
+			var touch = e.targetTouches[0]; 
+			if((xFin>xIni+30) && (yFin>yIni-20) && (yFin<yIni+20) && (current_pokemon>1)) {
+				var i = --current_pokemon;
+				var pkmn = i<10?"00"+i:i<100?"0"+i:i
+				closeDetails(); showDetails(pkmn);
+			}
+			if((xFin<xIni+30) && (yFin>yIni-20) && (yFin<yIni+20) && (current_pokemon<last_pokemon)) {
+				var i = ++current_pokemon;
+				var pkmn = i<10?"00"+i:i<100?"0"+i:i
+				closeDetails(); showDetails(pkmn);
+			}
+		}
+	}, false); 
+}
+
+function swipeImage(){
+	var xIni, yIni;
+	var canvas = document.getElementById('gallery');
+	canvas.addEventListener('touchstart', function(e){
+		if (e.targetTouches.length == 1) { 
+			var touch = e.targetTouches[0]; 
+			xIni = touch.pageX;
+			yIni = touch.pageY;
+		}
+	}, false);
+	canvas.addEventListener('touchmove', function(e){
+		if (e.targetTouches.length == 1) { 
+			var touch = e.targetTouches[0]; 
+			xFin = touch.pageX;
+			yFin = touch.pageY;
+		}
+	}, false);
+	canvas.addEventListener('touchend', function(e){
+		if (e.targetTouches.length == 0) {
+			var touch = e.targetTouches[0];
+			var i = current_pokemon;
+			var pkmn = i<10?"00"+i:i<100?"0"+i:i
+			if((xFin>xIni+30) && (yFin>yIni-20) && (yFin<yIni+20) && (current_alt_image>1)) {
+				var f = --current_alt_image;
+				var form = f==1?"":"_f"+f;
+				if ( form == "" || alt_forms.includes(pkmn+"_f"+f) ) viewImage(pkmn+form);
+			}
+			if((xFin<xIni+30) && (yFin>yIni-20) && (yFin<yIni+20) && (current_alt_image<4)) {
+				var f = ++current_alt_image;
+				var form = f==1?"":"_f"+f;
+				if ( form == "" || alt_forms.includes(pkmn+"_f"+f) ) viewImage(pkmn+form);
+			}
 		}
 	}, false); 
 }
