@@ -1,0 +1,40 @@
+/* EASTER EGG */
+html {
+	height: 100%;
+	background: LemonChiffon;
+	overflow: hidden;
+}
+body {
+	margin: 0;
+	height: 100%;
+}
+#ee {
+	background: repeating-linear-gradient(transparent, darkgoldenrod 1em), repeating-linear-gradient(0.25turn, transparent, goldenrod 1em);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+#cont, #msgr {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+	font-size: 1.5em;
+	font-weight: bold;
+	padding: 0 10px;
+	color: #333;
+	background: lemonchiffon;
+	border: 1.5px solid #111;
+	border-radius: 10px;
+}
+#pika {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.ball {
+	position: absolute;
+	display: none;
+}

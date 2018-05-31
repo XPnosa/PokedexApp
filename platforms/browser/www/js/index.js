@@ -36,7 +36,6 @@ function readJson(filePath) {
 	xmlhttp.open("GET", filePath, true);
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-			//document.getElementById("list").innerHTML = '<img id="loading" src="img/loading.gif"/>'; 
 			fitDex();
 			var pokemon = JSON.parse(xmlhttp.responseText);
 			var len = Object.keys(pokemon).length;
@@ -132,7 +131,6 @@ function showDex(n) {
 		for(i=0; i<list.length; i++) list[i].style.display = "";
 		document.getElementById("loading-mini").style.display='none';
 	}, 0);
-	
 }
 
 function shearchDex(region) {
@@ -167,15 +165,12 @@ function showDetails(pkmn) {
 	var type = "<center><div class='pk_types_info'>";
 	for (var t=0;t<pokedex[pkmn].tipo.length;t++) type += "<div class='pk_type "+pokedex[pkmn].tipo[t]+"'><span>"+pokedex[pkmn].tipo[t]+"</span></div>";
 	type += "<div></center>";
-	for (var f=4;f>=2;f--) 
-		if (alt_forms.includes(pkmn+"_f"+f)) 
-			info.innerHTML += "<img style='float: right; padding-left: 5px;' class='pk_img pokeball' onclick='viewImage(\""+pkmn+"_f"+f+"\")' src='img/ball_"+f+".png' />";
+	for (var f=4;f>=2;f--) if (alt_forms.includes(pkmn+"_f"+f)) info.innerHTML += "<img style='float: right; padding-left: 5px;' class='pk_img pokeball' onclick='viewImage(\""+pkmn+"_f"+f+"\")' src='img/ball_"+f+".png' />";
 	info.innerHTML += "<img style='float: right;' class='pk_img pokeball' onclick='viewImage(\""+pkmn+"\")' src='img/ball_1.png' />";
 	info.innerHTML += "<p class='title'><span id='num'>" + pkmn + " - </span>" + pokedex[pkmn].nombre + "</p>" + desc  + "<hr />" + type;
 	details.style.display = ""; 
 	var ball_list = document.getElementsByClassName('pokeball');
-	for(i=0; i<ball_list.length; i++) 
-		ball_list[i].addEventListener('touchend', function(e){e.stopPropagation();}, false); 
+	for(i=0; i<ball_list.length; i++) ball_list[i].addEventListener('touchend', function(e){e.stopPropagation();}, false); 
 	fitDex();
 }
 
