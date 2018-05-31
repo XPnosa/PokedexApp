@@ -12,8 +12,8 @@ var delay = 100;
 var nextStep = 0;
 var numObjects = 6;
 
-var Xpos = wide/2;
-var Ypos = tall/2;
+var Xpos = wide / 2;
+var Ypos = tall / 2;
 
 var app = {
 	initialize: function() {
