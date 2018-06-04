@@ -24,19 +24,9 @@ var app = {
 		app.receivedEvent('deviceready');
 	},
 	receivedEvent: function(id) {
-		objectFloat();
-		fixScreen();
-		playMP3();
-		start();
+		objectFloat(); fixScreen(); start();
 	}
 };
-
-function playMP3() {
-	var audio = document.getElementById('pikachu');
-	var url = audio.getAttribute('src');
-	var m = new Media(url); 
-	m.play();
-}
 
 function objectFloat() {
 	for (var xx = 1; xx <= numObjects; xx++ ) {
