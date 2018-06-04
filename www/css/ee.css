@@ -1,4 +1,3 @@
-/* EASTER EGG */
 html {
 	background: LemonChiffon;
 }
@@ -6,6 +5,7 @@ body {
 	margin: 0;
 }
 html, body, #ee {
+	width: 100%;
 	height: 100%;
 	overflow: hidden;
 }
@@ -14,25 +14,25 @@ html, body, #ee {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
 }
 #cont, #msgr {
-	position: absolute;
-	left: 50%;
 	transform: translate(-50%, 0);
 	font-size: 1.5em;
 	font-weight: bold;
 	padding: 0 10px;
 	color: #333;
 	background: lemonchiffon;
-	border: 1.5px solid #111;
+	border: 1.5px solid #333;
 	border-radius: 10px;
 }
 #pika {
-	position: absolute;
 	top: 50%;
-	left: 50%;
 	transform: translate(-50%, -50%);
+}
+#pika, #cont, #msgr {
+	position: absolute;
+	left: 50%;
+	z-index: 1;
 }
 .ball {
 	position: absolute;

@@ -1,7 +1,5 @@
-var c = 0;
-
+var c, e;
 var ok = false;
-var aux = true;
 
 var tall = document.getElementById("body").offsetHeight
 var wide = document.getElementById("body").offsetWidth
@@ -28,24 +26,34 @@ var app = {
 	receivedEvent: function(id) {
 		objectFloat();
 		fixScreen();
+		playMP3();
 		start();
 	}
 };
+
+function playMP3() {
+	var audio = document.getElementById('pikachu');
+	var url = audio.getAttribute('src');
+	var m = new Media(url); 
+	m.play();
+}
 
 function objectFloat() {
 	for (var xx = 1; xx <= numObjects; xx++ ) {
 		var objectID = 'ball' + xx;
 		var object = document.getElementById(objectID);
-		object.style.top = Ypos + Math.cos((20 * Math.sin(nextStep/(30 + xx))) + xx * 70 ) * tall * (Math.sin(10 + nextStep/10) + 0.2) * Math.cos((nextStep + xx * 55)/10) + "px";
-		object.style.left = Xpos + Math.sin((20 * Math.sin(nextStep/30)) + xx * 70 ) * wide * (Math.sin(10 + nextStep / (10 + xx)) + 0.2) * Math.cos((nextStep + xx * 55) / 10) + "px";
+		object.style.top = Ypos + Math.cos((20 * Math.sin(nextStep/(30 + xx))) + xx * 70 ) * tall * 
+			(Math.sin(10 + nextStep/10) + 0.2) * Math.cos((nextStep + xx * 55)/10) / 3 + "px";
+		object.style.left = Xpos + Math.sin((20 * Math.sin(nextStep/30)) + xx * 70 ) * wide * 
+			(Math.sin(10 + nextStep / (10 + xx)) + 0.2) * Math.cos((nextStep + xx * 55)/10) / 3 + "px";
 	}
 	nextStep += step;
 	setTimeout('objectFloat()', delay);
 }
 
 function sum() {
-	aux = false;
-	c = c + 1;
+	c++;
+	e = 0;
 	document.getElementById("cont").innerHTML = c;
 	if (c == 5) {document.getElementById("msgr").innerHTML = 'Nice';delay = 90}
 	else if (c == 10) {document.getElementById("msgr").innerHTML = 'Good';delay = 80}
@@ -55,20 +63,25 @@ function sum() {
 }
 
 function res() {
-	fixScreen();
-	if (aux) {
-		c = 0
-		document.getElementById("cont").innerHTML = c;
-		document.getElementById("msgr").innerHTML = '...';
-		delay = 100
-	}
-	aux = true;
+	c = 0; 
+	e = 0;
+	document.getElementById("cont").innerHTML = c;
+	document.getElementById("msgr").innerHTML = '...';
+	delay = 100
 }
 
-function start(){
+async function start(){
 	ok = true;
-	for (var xx = 1; xx <= numObjects; xx++ ) document.getElementById("ball" + xx).style.display = 'block';
+	for (var xx = 1; xx <= numObjects; xx++ ) {
+		document.getElementById("b"+xx).src = "ee/ball.gif?" + new Date().getTime();
+		document.getElementById("ball" + xx).style.display = 'block';
+		await sleep(500);
+	}
 	res();
+}
+
+function bad() {
+	if ( ++e == 3 ) res();
 }
 
 function fixScreen() {
@@ -78,7 +91,9 @@ function fixScreen() {
 	document.getElementById("msgr").style.top = ( tall / 2 + 60 ) + "px";
 }
 
-app.initialize();
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 $(window).bind('resize',function(e) { fixScreen(); });
 

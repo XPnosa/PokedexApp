@@ -10,4 +10,5 @@
     <content src="index.html" />
     <icon src="www/img/favicon.png" />
     <access origin="*" />
+    <gap:plugin name="org.apache.cordova.media" />
 </widget>

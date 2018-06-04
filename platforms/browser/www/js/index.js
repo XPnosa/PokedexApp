@@ -49,11 +49,7 @@ function readJson(filePath) {
 				if ( i <= ( len ) ) {
 					printPokedex(pkmn);
 					if ( i == len ) {
-						showDex(0);
-						swipePkmn();
-						swipeImage();
-						swipePkdex();
-						load_completed = true;
+						showDex(0); swipePkmn(); swipeImage(); load_completed = true;
 						document.getElementById("loading").style.display = 'none';
 						var list = document.getElementsByClassName('pkmn');
 						for(i=0; i<list.length; i++) list[i].classList.add("visible");
@@ -91,7 +87,7 @@ function fitDex() {
 }
 
 function printLegend(pkmn) {
-	var legend = '<div style="cursor:default;" class="active"><div>Nacional</div></div>' +
+	var legend = '<div style="cursor:default;" class="active"><div>Cargando</div></div>' +
 	'<div class="init inactive"><div class="init">&nbsp;</div></div>'
 	document.getElementById("pkdex").innerHTML = "<legend id='legend'>"+legend+"</legend>" + 
 	"<div id='list'><img id='loading' title='Cargando...' src='img/loading.gif' /></div>";
@@ -271,32 +267,6 @@ function closeImage() {
 	var photo = document.getElementById("photo-full");
 	gallery.style.display = "none";
 	photo.src = "";
-}
-
-function swipePkdex(){
-	var xIni, yIni;
-	var canvas = document.getElementById('pkdex');
-	canvas.addEventListener('touchstart', function(e){
-		if (e.targetTouches.length == 1) { 
-			var touch = e.targetTouches[0]; 
-			xIni = touch.pageX;
-			yIni = touch.pageY;
-		}
-	}, false);
-	canvas.addEventListener('touchmove', function(e){
-		if (e.targetTouches.length == 1) { 
-			var touch = e.targetTouches[0]; 
-			xFin = touch.pageX;
-			yFin = touch.pageY;
-		}
-	}, false);
-	canvas.addEventListener('touchend', function(e){
-		if (e.targetTouches.length == 0) { 
-			var touch = e.targetTouches[0]; 
-			if((xFin>xIni+30) && (yFin>yIni-20) && (yFin<yIni+20) && (generation>0)) showDex(--generation);
-			if((xFin<xIni-30) && (yFin>yIni-20) && (yFin<yIni+20) && (generation<7)) showDex(++generation);
-		}
-	}, false); 
 }
 
 function swipePkmn(){

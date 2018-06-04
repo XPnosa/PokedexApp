@@ -7,29 +7,19 @@
 		<link rel="icon" type="image/png" href="img/favicon.png" />
 		<link href="css/ee.css" rel="stylesheet">
 	</head>
-	<body id="body" onload="start()">
+	<body id="body">
 		<script type="text/javascript" src="cordova.js"></script>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/ee.js"></script>
-		<div id="ee"><img ondblclick="res();" id="pika" src="ee/pika.gif"/></div>
-		<center><div id="cont"></div><div id="msgr"></div></center>
-		<div  class="ball" id="ball1">
-			<img onmousedown="sum();" src="ee/ball.gif" width="25px"/>
-		</div>
-		<div  class="ball" id="ball2">
-			<img onmousedown="sum();" src="ee/ball.gif" width="25px"/>
-		</div>
-		<div  class="ball" id="ball3">
-			<img onmousedown="sum();" src="ee/ball.gif" width="25px"/>
-		</div>
-		<div class="ball" id="ball4">
-			<img onmousedown="sum();" src="ee/ball.gif" width="25px"/>
-		</div>
-		<div class="ball" id="ball5">
-			<img onmousedown="sum();" src="ee/ball.gif" width="25px"/>
-		</div>
-		<div class="ball" id="ball6">
-			<img onmousedown="sum();" src="ee/ball.gif" width="25px"/>
-		</div>
+		<script type="text/javascript">app.initialize();</script>
+		<audio id="pikachu" src="sound/pikachu.mp3" type="audio/mpeg"> </audio>
+		<div id="ee" onclick="bad();"><img id="pika" src="ee/pika.gif" /></div>
+		<center><div id="cont">&nbsp;</div><div id="msgr">&nbsp;</div></center>
+		<div class="ball" id="ball1"><img id="b1" onmousedown="sum();" src="ee/ball.gif" width="25px"/></div>
+		<div class="ball" id="ball2"><img id="b2" onmousedown="sum();" src="ee/ball.gif" width="25px"/></div>
+		<div class="ball" id="ball3"><img id="b3" onmousedown="sum();" src="ee/ball.gif" width="25px"/></div>
+		<div class="ball" id="ball4"><img id="b4" onmousedown="sum();" src="ee/ball.gif" width="25px"/></div>
+		<div class="ball" id="ball5"><img id="b5" onmousedown="sum();" src="ee/ball.gif" width="25px"/></div>
+		<div class="ball" id="ball6"><img id="b6" onmousedown="sum();" src="ee/ball.gif" width="25px"/></div>
 	</body>
 </html>
