@@ -65,7 +65,7 @@ async function start(){
 	for (var xx = 1; xx <= numObjects; xx++ ) {
 		document.getElementById("b"+xx).src = "ee/ball.gif?" + new Date().getTime();
 		document.getElementById("ball" + xx).style.display = 'block';
-		await sleep(500);
+		await sleep(1000/numObjects);
 	}
 	res();
 }

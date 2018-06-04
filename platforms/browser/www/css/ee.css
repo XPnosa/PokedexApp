@@ -38,3 +38,13 @@ html, body, #ee {
 	position: absolute;
 	display: none;
 }
+@media (min-width:640px)  { 
+	.ball > img {
+		width: 50px;
+	}
+}
+@media (min-width:1200px)  { 
+	.ball > img {
+		width: 75px;
+	}
+}
