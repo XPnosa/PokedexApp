@@ -43,8 +43,3 @@ html, body, #ee {
 		width: 50px;
 	}
 }
-@media (min-width:1200px)  { 
-	.ball > img {
-		width: 75px;
-	}
-}
